@@ -9,4 +9,27 @@ body {
 }
 
 .interactive-embed {
+    p {font-size: 14px; }
+
+    table {
+        th, td {
+            vertical-align: top;
+        }
+        th {
+            div {
+                width: 100px;
+                height: 100px;
+                border-radius: 50px;
+                background: #dcdcdc;
+            }
+        }
+
+        .andre {
+            color: #52c5d7;
+        }
+
+         .carl {
+            color: #52c5d7;
+        }
+    }
 }
