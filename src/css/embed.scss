@@ -1,5 +1,40 @@
 @import "fonts";
 
+div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+html, body {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  color: #333;
+   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
 html,
 body {
     @include fs-bodyCopy(2);
@@ -9,27 +44,134 @@ body {
 }
 
 .interactive-embed {
-    p {font-size: 14px; }
+   
 
-    table {
-        th, td {
-            vertical-align: top;
+    #wellness-table {
+        background: #fae3d1;
+        // border-collapse: collapse;
+        // table-layout: fixed;
+
+        // .table-row {
+        //     clear: both;
+        // }
+
+        .table-cell {
+            padding: 12px 20px;
+            text-align: left;
+            
         }
-        th {
-            div {
+        // th, td {
+        //     vertical-align: top;
+        //     padding: 12px 20px;
+        //     text-align: left;
+        // }
+        .portrait {
                 width: 100px;
                 height: 100px;
                 border-radius: 50px;
                 background: #dcdcdc;
-            }
         }
 
         .andre {
-            color: #52c5d7;
+            color: #e6711b;
         }
 
          .carl {
-            color: #52c5d7;
+            color: #e6711b;
         }
+
+        p {
+            font-family: "Guardian Text Egyptian Web";
+            font-size: 14px;
+            padding-top: 5px;
+            line-height: 1.3em;
+        }
+
+        h3 {
+            font-family: "Guardian Egyptian Web";
+            font-size: 18px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-family: "Guardian Sans Web";
+            font-size: 14px;
+            color: #fae3d1;
+            color: #fff;
+            font-weight: 800;
+        }
+
+       
+
+        .left-col {
+            padding: 4px 20px;
+            background: #f0aa76;
+           
+        }
+
+        .middle-col {
+      
+            
+        }
+
+        .right-col {
+            
+           padding: 30px 20px;
+            border-top: 1px dotted #e6711b;  
+        }
+
+        .header-row {
+            display: none;
+        }
+
+        @media screen and (min-width: 600px) {
+
+            display: table;
+            width: 100%;
+            // table-layout: fixed;
+
+            #wellness-diary-content {
+                display: table-row-group;
+            } 
+
+             .table-row, .header-row {
+            display: table-row;
+            }
+
+            .table-cell {
+            display: table-cell;
+        }
+
+             .left-col {
+            max-width: 120px;
+            min-width: 120px;
+             border-top: 1px dotted #fae3d1;
+             padding: 12px 20px;
+
+             &.header-cell {
+                 background: transparent;
+             }
+        }
+
+        .middle-col {
+            // width: calc(50% - 130px);
+            width: 40%;
+
+            // padding-right: 5%;
+           
+            border-top: 1px dotted #e6711b;
+           padding: 20px 20px;
+        }
+
+        .right-col {
+            // width: calc(50% - 130px);
+            width: 40%;
+            //  padding-right: 5%;
+            padding: 20px 20px;
+        }
+
+
+         }
     }
 }

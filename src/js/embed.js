@@ -16,27 +16,27 @@ window.init = function init(el, config) {
 
     function doStuff( resp ) {
         //console.log(resp);
-        var sheet = getParameterByName("sheet");
+        var months = getParameterByName("months");
 
-        if (sheet === null) {
-            sheet = "part1";
-        } 
+        if (months === null) {
+            months = "1,12";
+        }
 
-        var data = resp.sheets[sheet], i, htmlString = "";
+        months = months.split(",");
 
-        for (i = 0; i < data.length; i++) {
+        var startIndex = parseInt(months[0]) - 1;
+        var endIndex = parseInt(months[1]); 
 
-            htmlString += "<tr>";
-            htmlString += "<td><h4>" + data[i]["Month"] + "</h4></td>";
-            htmlString += "<td><h3><span class='carl'>Carl:</span>" + data[i]["Carl focus"] + "</h3></td>";
-            htmlString += "<td><h3><span class='andre'>Andre:</span>" + data[i]["Andre focus"] + "</h3></td>";
-            htmlString += "</tr>"
+        var data = resp.sheets["Sheet1"], i, htmlString = "";
 
-            htmlString += "<tr>";
-            htmlString += "<td></td>";
-            htmlString += "<td><p>" + data[i]["Carl details"] + "</p></td>";
-            htmlString += "<td><p>" + data[i]["Andre details"] + "</p></td>";
-            htmlString += "</tr>"
+        for (i = startIndex; i < endIndex; i++) {
+
+            htmlString += "<div class='table-row'>";
+            htmlString += "<div class='table-cell left-col'><h4>" + data[i]["Month"] + "</h4></div>";
+            htmlString += "<div class='table-cell middle-col'><h3><span class='carl'>Carl: </span>" + data[i]["Carl focus"] + "</h3><p>" + data[i]["Carl details"] + "</p></div>";
+            htmlString += "<div class='table-cell right-col'><h3><span class='andre'>Andr&eacute;: </span>" + data[i]["Andre focus"] + "</h3><p>" + data[i]["Andre details"] + "</p></div>";
+            htmlString += "</div>"
+
         }
 
         var content = document.getElementById("wellness-diary-content");
