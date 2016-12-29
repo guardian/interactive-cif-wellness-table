@@ -69,7 +69,20 @@ body {
                 width: 100px;
                 height: 100px;
                 border-radius: 50px;
-                background: #dcdcdc;
+                background-color: #dcdcdc;
+                text-indent: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                background-size: 100% 100%;
+                background-position: 0 0;
+                background-repeat: no-repeat;
+                &.carl {
+                    background-image: url("https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2015/2/16/1424090323392/CarlCederstr%C3%B6m.jpg?w=140&h=140&q=55&auto=format&usm=12&fit=max&s=56d3be998638156aab3693074c1d1ade");
+                }
+
+                &.andre {
+                    background-image: url("https://i.guim.co.uk/img/uploads/2016/12/11/Andre_Spicer.jpg?w=140&h=140&q=55&auto=format&usm=12&fit=max&s=1f47e5ad21a13b0ec5e4b891e1d2a721");
+                }
         }
 
         .andre {
@@ -78,6 +91,19 @@ body {
 
          .carl {
             color: #e6711b;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: 800;
+            color: #555;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        a {
+            text-decoration: none;
         }
 
         p {
@@ -150,7 +176,7 @@ body {
              padding: 12px 20px;
 
              &.header-cell {
-                 background: transparent;
+                //  background: transparent;
              }
         }
 
